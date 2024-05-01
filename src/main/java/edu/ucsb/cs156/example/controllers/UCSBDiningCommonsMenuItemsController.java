@@ -28,7 +28,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 
 @Tag(name = "UCSBDiningCommonsMenuItem")
-@RequestMapping("/api/ucsbmenuitem")
+@RequestMapping("/api/ucsbmenuitems")
 @RestController
 @Slf4j
 public class UCSBDiningCommonsMenuItemsController extends ApiController {
