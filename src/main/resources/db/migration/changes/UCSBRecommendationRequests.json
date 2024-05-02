@@ -1,9 +1,8 @@
-{
-    "databaseChangeLog": [
-      {
+{ "databaseChangeLog": [
+    {
         "changeSet": {
-          "id": "UCSBDiningCommonsMenuItem-1",
-          "author": "rt.z",
+          "id": "UCSBRecommendationRequests-1",
+          "author": "Daniel.Lyu",
           "preConditions": [
             {
               "onFail": "MARK_RAN"
@@ -12,7 +11,7 @@
               "not": [
                 {
                   "tableExists": {
-                    "tableName": "UCSBDININGCOMMONSMENUITEM"
+                    "tableName": "UCSBRECOMMENDATIONREQUESTS"
                   }
                 }
               ]
@@ -26,10 +25,8 @@
                     "column": {
                       "autoIncrement": true,
                       "constraints": {
-                        "primaryKey": true
-                        
-                        "primaryKeyName": "CONSTRAINT_7"
-
+                        "primaryKey": true,
+                        "primaryKeyName": "CONSTRAINT_12"
                       },
                       "name": "ID",
                       "type": "BIGINT"
@@ -37,24 +34,42 @@
                   },
                   {
                     "column": {
-                      "name": "DINING_COMMONS_CODE",
+                      "name": "REQUEST_EMAIL",
                       "type": "VARCHAR(255)"
                     }
                   },
                   {
                     "column": {
-                      "name": "NAME",
+                      "name": "PROFESSOR_EMAIL",
                       "type": "VARCHAR(255)"
                     }
                   },
                   {
                     "column": {
-                      "name": "STATION",
+                      "name": "EXPLANATION",
                       "type": "VARCHAR(255)"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "DATE_REQUESTED",
+                      "type": "TIMESTAMP"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "DATE_NEEDED",
+                      "type": "TIMESTAMP"
+                    }
+                  },
+                  {
+                    "column": {
+                      "name": "DONE",
+                      "type": "BOOLEAN"
                     }
                   }
                 ],
-                "tableName": "UCSBDININGCOMMONSMENUITEM"
+                "tableName": "UCSBRECOMMENDATIONREQUESTS"
               }
             }
           ]
