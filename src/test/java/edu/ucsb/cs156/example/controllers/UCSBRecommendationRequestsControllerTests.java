@@ -285,7 +285,7 @@ public class UCSBRecommendationRequestsControllerTests extends ControllerTestCas
                                 .explanation("Some_explanation2")
                                 .dateRequested(ldt2)
                                 .dateNeeded(ldt2)
-                                .done(true)
+                                .done(false)
                                 .build();
 
                 String requestBody = mapper.writeValueAsString(ucsbRecommendationRequestsEdited);
@@ -344,4 +344,6 @@ public class UCSBRecommendationRequestsControllerTests extends ControllerTestCas
                 assertEquals("UCSBRecommendationRequests with id 67 not found", json.get("message"));
 
         }
+
+
 }
