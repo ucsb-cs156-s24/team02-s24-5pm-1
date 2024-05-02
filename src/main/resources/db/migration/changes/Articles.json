@@ -3,7 +3,7 @@
       {
         "changeSet": {
           "id": "Articles-1",
-          "author": "SanjayS",
+          "author": "MattP",
           "preConditions": [
             {
               "onFail": "MARK_RAN"
@@ -27,7 +27,7 @@
                       "autoIncrement": true,
                       "constraints": {
                         "primaryKey": true,
-                        "primaryKeyName": "CONSTRAINT_5"
+                        "primaryKeyName": "CONSTRAINT_661"
                       },
                       "name": "ID",
                       "type": "BIGINT"
@@ -64,7 +64,7 @@
                     }
                   }
                 ],
-                "tableName": "UCSBDATES"
+                "tableName": "ARTICLES"
               }
             }
           ]
