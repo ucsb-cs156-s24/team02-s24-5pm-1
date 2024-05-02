@@ -135,7 +135,7 @@ public class UCSBHelpRequestsControllerTests extends ControllerTestCase {
 
             UCSBHelpRequest ucsbDate1 = UCSBHelpRequest.builder()
                             .requestTime(ldt1)
-                            .solved(false)
+                            .solved(true)
                             .requesterEmail("testemail")
                             .explanation("test1")
                             .teamId("team1")
@@ -148,7 +148,7 @@ public class UCSBHelpRequestsControllerTests extends ControllerTestCase {
             MvcResult response = mockMvc.perform(
                             post("/api/helprequest/post?" +
                             "requesterEmail=testemail&teamId=team1&tableOrBreakoutRoom=table1&" +
-                            "explanation=test1&solved=false&localDateTime=2022-01-03T00:00:00")
+                            "explanation=test1&solved=true&localDateTime=2022-01-03T00:00:00")
                                             .with(csrf()))
                             .andExpect(status().isOk()).andReturn();
 
@@ -284,7 +284,7 @@ public class UCSBHelpRequestsControllerTests extends ControllerTestCase {
 
             UCSBHelpRequest ucsbDate1 = UCSBHelpRequest.builder()
                             .requestTime(ldt1)
-                            .solved(false)
+                            .solved(true)
                             .requesterEmail("test@test.com")
                             .explanation("test1")
                             .teamId("team1")
@@ -293,7 +293,7 @@ public class UCSBHelpRequestsControllerTests extends ControllerTestCase {
 
             UCSBHelpRequest ucsbDate2 = UCSBHelpRequest.builder()
                             .requestTime(ldt2)
-                            .solved(true)
+                            .solved(false)
                             .requesterEmail("test2@test.com")
                             .explanation("test2")
                             .teamId("team2")
@@ -321,36 +321,39 @@ public class UCSBHelpRequestsControllerTests extends ControllerTestCase {
     }
 
     
-    // @WithMockUser(roles = { "ADMIN", "USER" })
-    // @Test
-    // public void admin_cannot_edit_ucsbdate_that_does_not_exist() throws Exception {
-    //         // arrange
+    @WithMockUser(roles = { "ADMIN", "USER" })
+    @Test
+    public void admin_cannot_edit_ucsbdate_that_does_not_exist() throws Exception {
+            // arrange
 
-    //         LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
+            LocalDateTime ldt1 = LocalDateTime.parse("2022-01-03T00:00:00");
 
-    //         UCSBDate ucsbEditedDate = UCSBDate.builder()
-    //                         .name("firstDayOfClasses")
-    //                         .quarterYYYYQ("20222")
-    //                         .localDateTime(ldt1)
-    //                         .build();
+            UCSBHelpRequest ucsbDate1 = UCSBHelpRequest.builder()
+                            .requestTime(ldt1)
+                            .solved(false)
+                            .requesterEmail("test@test.com")
+                            .explanation("test1")
+                            .teamId("team1")
+                            .tableOrBreakoutRoom("1-9")
+                            .build();
 
-    //         String requestBody = mapper.writeValueAsString(ucsbEditedDate);
+            String requestBody = mapper.writeValueAsString(ucsbDate1);
 
-    //         when(ucsbDateRepository.findById(eq(67L))).thenReturn(Optional.empty());
+            when(ucsbHelpRequestsRepository.findById(eq(67L))).thenReturn(Optional.empty());
 
-    //         // act
-    //         MvcResult response = mockMvc.perform(
-    //                         put("/api/ucsbdates?id=67")
-    //                                         .contentType(MediaType.APPLICATION_JSON)
-    //                                         .characterEncoding("utf-8")
-    //                                         .content(requestBody)
-    //                                         .with(csrf()))
-    //                         .andExpect(status().isNotFound()).andReturn();
+            // act
+            MvcResult response = mockMvc.perform(
+                            put("/api/helprequest?id=67")
+                                            .contentType(MediaType.APPLICATION_JSON)
+                                            .characterEncoding("utf-8")
+                                            .content(requestBody)
+                                            .with(csrf()))
+                            .andExpect(status().isNotFound()).andReturn();
 
-    //         // assert
-    //         verify(ucsbDateRepository, times(1)).findById(67L);
-    //         Map<String, Object> json = responseToJson(response);
-    //         assertEquals("UCSBDate with id 67 not found", json.get("message"));
+            // assert
+            verify(ucsbHelpRequestsRepository, times(1)).findById(67L);
+            Map<String, Object> json = responseToJson(response);
+            assertEquals("UCSBHelpRequest with id 67 not found", json.get("message"));
 
-    // }
+    }
 }
