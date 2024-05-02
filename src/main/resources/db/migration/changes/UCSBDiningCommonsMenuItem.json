@@ -26,8 +26,7 @@
                     "column": {
                       "autoIncrement": true,
                       "constraints": {
-                        "primaryKey": true
-                        
+                        "primaryKey": true,
                         "primaryKeyName": "CONSTRAINT_7"
 
                       },
