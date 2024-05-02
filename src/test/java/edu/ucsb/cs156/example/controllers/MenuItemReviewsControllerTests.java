@@ -271,8 +271,8 @@ public class MenuItemReviewsControllerTests extends ControllerTestCase {
         .build();
 
         MenuItemReviews menuItemReviewsEdited = MenuItemReviews.builder()
-        .itemId(3)
-        .reviewerEmail("cgaucho@gmail.com")
+        .itemId(6)
+        .reviewerEmail("hello@gmail.com")
         .stars(4)
         .comments("best veggie pizza ever")
         .dateReviewed(review2)
