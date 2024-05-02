@@ -13,8 +13,8 @@ Instructions: <https://ucsb-cs156.github.io/s24/lab/team02.html>
 
 Deployments:
 
-* Prod: <https://team02.dokku-17.cs.ucsb.edu>
-* QA: <https://team02-qa.dokku-17.cs.ucsb.edu>
+* Prod: <https://team02.dokku-09.cs.ucsb.edu/>
+* QA: <https://team02-qa.dokku-09.cs.ucsb.edu>
 
 # Setup before running application
 
