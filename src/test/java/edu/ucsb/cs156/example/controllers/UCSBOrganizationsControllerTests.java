@@ -136,14 +136,14 @@ public class UCSBOrganizationsControllerTests extends ControllerTestCase {
                         .orgCode("SKY")
                         .orgTranslationShort("SKYDIVING_CLUB")
                         .orgTranslation("SKYDIVING_CLUB_AT_UCSB")
-                        .inactive(false)
+                        .inactive(true)
                         .build();
 
                 when(ucsbOrganizationsRepository.save(eq(sky))).thenReturn(sky);
 
                 // act
                 MvcResult response = mockMvc.perform(
-                                post("/api/ucsbOrganizations/post?orgCode=SKY&orgTranslationShort=SKYDIVING_CLUB&orgTranslation=SKYDIVING_CLUB_AT_UCSB&inactive=false")
+                                post("/api/ucsbOrganizations/post?orgCode=SKY&orgTranslationShort=SKYDIVING_CLUB&orgTranslation=SKYDIVING_CLUB_AT_UCSB&inactive=true")
                                                 .with(csrf()))
                                 .andExpect(status().isOk()).andReturn();
 
@@ -256,9 +256,9 @@ public class UCSBOrganizationsControllerTests extends ControllerTestCase {
 
                 UCSBOrganizations osliEdited = UCSBOrganizations.builder()
                         .orgCode("OSLI")
-                        .orgTranslationShort("STUDENT_LIFE")
-                        .orgTranslation("OFFICE_OF_STUDENT_LIFE")
-                        .inactive(false)
+                        .orgTranslationShort("STUDENT_LIFE1")
+                        .orgTranslation("OFFICE_OF_STUDENT_LIFE1")
+                        .inactive(true)
                         .build();
 
                 String requestBody = mapper.writeValueAsString(osliEdited);
