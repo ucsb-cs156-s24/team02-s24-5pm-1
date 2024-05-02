@@ -27,8 +27,8 @@ import javax.validation.Valid;
 
 import java.time.LocalDateTime;
 
-@Tag(name = "UCSBDates")
-@RequestMapping("/api/ucsbdates")
+@Tag(name = "Articles")
+@RequestMapping("/api/articles")
 @RestController
 @Slf4j
 public class ArticlesController extends ApiController {
@@ -44,7 +44,7 @@ public class ArticlesController extends ApiController {
         return articles;
     }
 
-    @Operation(summary= "Create a new date")
+    @Operation(summary= "Create a new article")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/post")
     public Articles postArticles(
@@ -52,7 +52,8 @@ public class ArticlesController extends ApiController {
             @Parameter(name="url") @RequestParam String url,
             @Parameter(name="explanation") @RequestParam String explanation,
             @Parameter(name="email") @RequestParam String email,
-            @Parameter(name="dateAdded (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)") @RequestParam("localDateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateAdded)
+            //@Parameter(name="dateAdded") @RequestParam("localDateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateAdded)
+            @Parameter(name="dateAdded") LocalDateTime dateAdded)
             throws JsonProcessingException {
 
         // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
