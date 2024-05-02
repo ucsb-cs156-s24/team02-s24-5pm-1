@@ -277,7 +277,7 @@ public class ArticlesControllerTests extends ControllerTestCase {
                                 .title("New Article")
                                 .url("new.url")
                                 .explanation("a new article")
-                                .email("e@ma.il")
+                                .email("new@e.mail")
                                 .dateAdded(ldt2)
                                 .build();
 
