@@ -3,7 +3,7 @@
       {
         "changeSet": {
           "id": "MenuItemReviews-1",
-          "author": "MattP",
+          "author": "Peak",
           "preConditions": [
             {
               "onFail": "MARK_RAN"
@@ -27,7 +27,7 @@
                       "autoIncrement": true,
                       "constraints": {
                         "primaryKey": true,
-                        "primaryKeyName": "CONSTRAINT_5"
+                        "primaryKeyName": "CONSTRAINT_6"
                       },
                       "name": "ID",
                       "type": "BIGINT"
