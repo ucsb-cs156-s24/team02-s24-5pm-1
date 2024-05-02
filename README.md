@@ -2,7 +2,14 @@
 
 Instructions: <https://ucsb-cs156.github.io/s24/lab/team02.html>
 
-TODO: Add a link to the deployed Dokku app for your team here, e.g.
+| Name                | GitHub Id    | Database                      |
+|---------------------|--------------|-------------------------------|
+| Rick T. Zhang       | rtzhang1x    | UCSB Dining Commons Menu Items|
+| Peak Manopchantaroj | Peak1260     | Menu Item Reviews             |
+| George Nebieridze   | GeorgebigG   | Help Requests                 |
+| Shuhan Lyu          | JUstISAGE    | Recommendation Requests       |
+| Sanjay Srikanth     | Crossover661 | Articles                      |
+| Yulin Lin           | ylin250      | UCSB Organizations            |
 
 Deployments:
 
