@@ -21,12 +21,24 @@ import lombok.NoArgsConstructor;
 public class UCSBHelpRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private long id;
 
+    @Column(name = "REQUESTEREMAIL")
     private String requesterEmail;
+
+    @Column(name = "TEAMID")
     private String teamId;
+
+    @Column(name = "TABLEORBREAKOUTROOM")
     private String tableOrBreakoutRoom;
+
+    @Column(name = "REQUESTTIME")
     private LocalDateTime requestTime;
+
+    @Column(name = "EXPLANATION")
     private String explanation;
+
+    @Column(name = "SOLVED")
     private boolean solved;
 }
