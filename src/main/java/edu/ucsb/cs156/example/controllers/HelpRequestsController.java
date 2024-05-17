@@ -51,7 +51,7 @@ public class HelpRequestsController extends ApiController {
             @Parameter(name="tableOrBreakoutRoom") @RequestParam String tableOrBreakoutRoom,
             @Parameter(name="explanation") @RequestParam String explanation,
             @Parameter(name="solved") @RequestParam boolean solved,
-            @Parameter(name="date (in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601)") @RequestParam("localDateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime)
+            @Parameter(name="localDateTime") @RequestParam("localDateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime)
             throws JsonProcessingException {
 
         // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
